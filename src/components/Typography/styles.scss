@@ -1,4 +1,63 @@
-.md-headline-1 {
+@mixin headline($font-weight, $font-size, $letter-spacing) {
   padding: 0;
   margin: 0;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+
+  font-weight: $font-weight;
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+}
+
+.md-headline-1 {
+  @include headline(300, 96px, -1.5px);
+}
+
+.md-headline-2 {
+  @include headline(300, 60px, -0.5px);
+}
+
+.md-headline-3 {
+  @include headline(400, 48px, 0px);
+}
+
+.md-headline-4 {
+  @include headline(400, 34px, 0.25px);
+}
+
+.md-headline-5 {
+  @include headline(400, 24px, 0px);
+}
+
+.md-headline-6 {
+  @include headline(500, 20px, 0.15px);
+}
+
+.md-headline-subtitle-1 {
+  @include headline(400, 16px, 0.15px);
+}
+
+.md-headline-subtitle-2 {
+  @include headline(500, 14px, 0.1px);
+}
+
+.md-headline-body-1 {
+  @include headline(400, 16px, 0.5px);
+}
+
+.md-headline-body-2 {
+  @include headline(400, 14px, 0.25px);
+}
+
+.md-headline-button {
+  @include headline(500, 14px, 1.25px);
+  text-transform: uppercase;
+}
+
+.md-headline-caption {
+  @include headline(400, 12px, 0.4px);
+}
+
+.md-headline-overline {
+  @include headline(400, 10px, 1.5px);
+  text-transform: uppercase;
 }
