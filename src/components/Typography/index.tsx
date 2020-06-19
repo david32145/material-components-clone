@@ -22,10 +22,12 @@ export interface TypographyProps {
     | "button"
     | "caption"
     | "overline";
+  onClick?: (event: React.MouseEvent<HTMLSpanElement, MouseEvent>) => void;
 }
 
 export const Typography: React.FC<TypographyProps> = ({
   variant = "h1",
+  onClick,
   children,
 }) => {
   if (variant === "h1") return <h1 className="md-headline-1">{children}</h1>;
@@ -43,11 +45,23 @@ export const Typography: React.FC<TypographyProps> = ({
   if (variant === "body2")
     return <p className="md-headline-body-2">{children}</p>;
   if (variant === "button")
-    return <span className="md-headline-button">{children}</span>;
+    return (
+      <span onClick={onClick} className="md-headline-button">
+        {children}
+      </span>
+    );
   if (variant === "caption")
-    return <span className="md-headline-caption">{children}</span>;
+    return (
+      <span onClick={onClick} className="md-headline-caption">
+        {children}
+      </span>
+    );
   if (variant === "overline")
-    return <span className="md-headline-overline">{children}</span>;
+    return (
+      <span onClick={onClick} className="md-headline-overline">
+        {children}
+      </span>
+    );
   return <h1 className="md-headline-1">{children}</h1>;
 };
 
